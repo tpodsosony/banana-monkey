@@ -1,11 +1,23 @@
 extends CharacterBody2D
 
+@onready var _animation_player = $AnimationPlayer
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
-var air_jump = 1
-
+func _process(_delta):
+	if Input.is_action_pressed("ui_right"):
+		_animation_player.play("walk")
+		$Sprite2D.flip_h=false
+	elif Input.is_action_pressed("ui_left"):
+		_animation_player.play("walk")
+		$Sprite2D.flip_h=true
+	else:
+		_animation_player.stop()
+		
+	#if Input.is_action_pressed("ui_jab"):
+		
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
