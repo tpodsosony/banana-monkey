@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://h1mobvebemti"]
 
-[ext_resource type="Script" path="res://Player Scripts/character_body_2d.gd" id="1_dhrgu"]
-[ext_resource type="Texture2D" uid="uid://btel85nlh8mrx" path="res://2d_animation_player-run.webp" id="2_heliu"]
+[ext_resource type="Script" path="res://Scripts/Player Scripts/player_1.gd" id="1_dhrgu"]
+[ext_resource type="Texture2D" uid="uid://btel85nlh8mrx" path="res://AssetsFinal/Sprites/Other/2d_animation_player-run.webp" id="2_heliu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71tln"]
 size = Vector2(39, 33)
@@ -44,7 +44,7 @@ _data = {
 "walk": SubResource("Animation_bgas0")
 }
 
-[node name="P1" type="CharacterBody2D"]
+[node name="Player1" type="CharacterBody2D"]
 position = Vector2(208, 528)
 script = ExtResource("1_dhrgu")
 

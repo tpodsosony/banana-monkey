@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name player_1
+signal healthChanged
 
 @onready var _animation_player = $AnimationPlayer
 
@@ -7,11 +9,18 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
+# set up variables
+var player_1
 var player_2
+var currentHealth
+var maxHealth = 100
+var isHurt
 
+# ready runs when this node first starts
 func _ready() -> void:
 	var root_node = get_parent()
-	player_2 = root_node.get_node("Player 2")
+	player_2 = root_node.get_node("Player2")
+	currentHealth = maxHealth
 	
 func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
@@ -27,7 +36,7 @@ func _process(_delta):
 	else:
 		$Sprite2D.flip_h=true
 		
-	print("Player 1: Position")
+	print("Player1: Position")
 	print(self.position.x)
 	
 	
@@ -53,4 +62,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+# Make sure "healthChanged" is emitted each time the player takes damage or heals (no heal for us)
+func hurtByEnemy(_area):
+	currentHealth -= 10
+	if currentHealth < 0:
+		currentHealth = maxHealth
+	isHurt = true
+	healthChanged.emit()
+	
+	# then knockback stuff...
+	# https://www.youtube.com/watch?v=UEJcUnq2dfU
+	# at  4:03
+	
 	

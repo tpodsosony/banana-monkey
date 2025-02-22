@@ -2,6 +2,6 @@
 
 [ext_resource type="AudioStream" uid="uid://d2702v3oqd1cf" path="res://AssetsFinal/Audio/Music/MenuScreen.ogg" id="1_truqr"]
 
-[node name="AudioStartMenu" type="AudioStreamPlayer"]
+[node name="StartMenuMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_truqr")
 autoplay = true

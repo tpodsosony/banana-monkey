@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn4awf7d3uetp"
-path="res://.godot/imported/roguelikeChar_transparent.png-1812bfc643e8e775e03439ddcdac5108.ctex"
+uid="uid://csjifvomjb5ah"
+path="res://.godot/imported/DesertBkgd_2024-02-21_1800.jpg-ea0babbece9a480f6a6fdf640375a6f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://roguelikeChar_transparent.png"
-dest_files=["res://.godot/imported/roguelikeChar_transparent.png-1812bfc643e8e775e03439ddcdac5108.ctex"]
+source_file="res://AssetsFinal/Bkgd/DesertBkgd_2024-02-21_1800.jpg"
+dest_files=["res://.godot/imported/DesertBkgd_2024-02-21_1800.jpg-ea0babbece9a480f6a6fdf640375a6f9.ctex"]
 
 [params]
 

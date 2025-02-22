@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btel85nlh8mrx"
-path="res://.godot/imported/2d_animation_player-run.webp-f48e145ffb89b673dd249b1bec3a3f42.ctex"
+uid="uid://x7gcch6ffjv7"
+path="res://.godot/imported/ThemeForButtons.png-4786a3737fd735788bd60a48645dac23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2d_animation_player-run.webp"
-dest_files=["res://.godot/imported/2d_animation_player-run.webp-f48e145ffb89b673dd249b1bec3a3f42.ctex"]
+source_file="res://AssetsWorking/ProgressPics/ThemeForButtons.png"
+dest_files=["res://.godot/imported/ThemeForButtons.png-4786a3737fd735788bd60a48645dac23.ctex"]
 
 [params]
 

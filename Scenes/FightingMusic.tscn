@@ -2,6 +2,6 @@
 
 [ext_resource type="AudioStream" uid="uid://ba157n28vdl6e" path="res://AssetsFinal/Audio/Music/FightingMusic.ogg" id="1_vjd5o"]
 
-[node name="AudioFighting" type="AudioStreamPlayer"]
+[node name="FightingMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_vjd5o")
 autoplay = true

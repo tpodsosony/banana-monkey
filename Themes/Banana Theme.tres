@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://elninl8mwhlo"]
 
-[ext_resource type="StyleBox" uid="uid://ctkp7sik2nmpu" path="res://Scenes/ButtonHoverStyle.tres" id="1_ge0c5"]
-[ext_resource type="StyleBox" uid="uid://wuawt08d8tpn" path="res://Scenes/ButtonStyle.tres" id="1_pf0vg"]
+[ext_resource type="StyleBox" uid="uid://ctkp7sik2nmpu" path="res://Themes/ButtonHoverStyle.tres" id="1_ge0c5"]
+[ext_resource type="StyleBox" uid="uid://wuawt08d8tpn" path="res://Themes/ButtonStyle.tres" id="1_pf0vg"]
 [ext_resource type="FontFile" uid="uid://dupdhlts4osjp" path="res://AssetsFinal/Fonts/Anchovy/PC/Anchovy.ttf" id="1_vhwkh"]
 
 [resource]

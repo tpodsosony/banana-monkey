@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbwh5fhq187ss"]
+
+[ext_resource type="Texture2D" uid="uid://d1uqddunqoy03" path="res://AssetsFinal/Sprites/Other/icon.svg" id="1_p0nmk"]
+[ext_resource type="PackedScene" uid="uid://naslf5cp7p85" path="res://Scenes/FightingMusic.tscn" id="1_x4vh3"]
+[ext_resource type="PackedScene" uid="uid://cos8mfhp6767p" path="res://Scenes/invisible_walls.tscn" id="2_eswe6"]
+[ext_resource type="Texture2D" uid="uid://csjifvomjb5ah" path="res://AssetsFinal/Bkgd/DesertBkgd_2024-02-21_1800.jpg" id="3_t4pjx"]
+[ext_resource type="PackedScene" uid="uid://cswyxrpthip2g" path="res://Scenes/Player2.tscn" id="4_m71gc"]
+[ext_resource type="PackedScene" uid="uid://h1mobvebemti" path="res://Scenes/Player1.tscn" id="5_sj1l2"]
+[ext_resource type="Script" path="res://Scripts/health_bar_p1.gd" id="7_7qamt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c16yb"]
+size = Vector2(1153.75, 84)
+
+[node name="FightingScene" type="Node2D"]
+position = Vector2(-68, -57)
+
+[node name="FightingMusic" parent="." instance=ExtResource("1_x4vh3")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(68, 63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578, 603)
+shape = SubResource("RectangleShape2D_c16yb")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(1, -3)
+scale = Vector2(9.00781, 0.65625)
+texture = ExtResource("1_p0nmk")
+
+[node name="Invisible Walls" parent="." instance=ExtResource("2_eswe6")]
+position = Vector2(4, 1)
+
+[node name="Invisible Walls2" parent="." instance=ExtResource("2_eswe6")]
+position = Vector2(1079, 3)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+offset_left = 73.0
+offset_top = 118.0
+offset_right = 1443.0
+offset_bottom = 777.0
+texture = ExtResource("3_t4pjx")
+
+[node name="Player2" parent="." instance=ExtResource("4_m71gc")]
+position = Vector2(308, -92)
+
+[node name="Player1" parent="." groups=["Player_1"] instance=ExtResource("5_sj1l2")]
+position = Vector2(253, 601)
+
+[node name="P1HealthBar" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="P1HealthBar" node_paths=PackedStringArray("player_1")]
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 114.0
+offset_bottom = 27.0
+value = 50.0
+script = ExtResource("7_7qamt")
+player_1 = NodePath("../../Player1")
