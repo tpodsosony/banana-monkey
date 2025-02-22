@@ -1,75 +1,35 @@
 [gd_scene load_steps=11 format=3 uid="uid://bh2gi724s6ab6"]
 
 [ext_resource type="Texture2D" uid="uid://d1uqddunqoy03" path="res://icon.svg" id="1_3vevx"]
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_v73se"]
-[ext_resource type="Texture2D" uid="uid://btel85nlh8mrx" path="res://2d_animation_player-run.webp" id="2_7pcbx"]
 [ext_resource type="PackedScene" uid="uid://cos8mfhp6767p" path="res://invisible_walls.tscn" id="3_u0cgs"]
 [ext_resource type="Texture2D" uid="uid://csjifvomjb5ah" path="res://AssetsFinal/DesertBkgd_2024-02-21_1800.jpg" id="4_61j4g"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_plsgf"]
-size = Vector2(39, 33)
-
-[sub_resource type="Animation" id="Animation_bgas0"]
-resource_name = "walk"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 2.23333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [2, 1, 2, 3, 4, 1, 0]
-}
-
-[sub_resource type="Animation" id="Animation_fymgd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jflrl"]
-_data = {
-"RESET": SubResource("Animation_fymgd"),
-"walk": SubResource("Animation_bgas0")
-}
+[ext_resource type="Script" path="res://player_2.gd" id="4_b3bkx"]
+[ext_resource type="PackedScene" uid="uid://h1mobvebemti" path="res://Player1.tscn" id="5_745op"]
+[ext_resource type="Texture2D" uid="uid://cn4awf7d3uetp" path="res://roguelikeChar_transparent.png" id="6_sty7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c16yb"]
 size = Vector2(1153.75, 84)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rheki"]
+size = Vector2(23.5, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4tm5"]
+atlas = ExtResource("6_sty7d")
+region = Rect2(0, 51, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3j6b7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4tm5")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(-68, -57)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(403, 458)
-script = ExtResource("1_v73se")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-122.5, 146.5)
-shape = SubResource("RectangleShape2D_plsgf")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-111, 146)
-texture = ExtResource("2_7pcbx")
-hframes = 6
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
-libraries = {
-"": SubResource("AnimationLibrary_jflrl")
-}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(68, 63)
@@ -91,10 +51,24 @@ position = Vector2(1079, 3)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
-offset_left = 80.0
-offset_top = 123.0
-offset_right = 1450.0
-offset_bottom = 782.0
+offset_left = 73.0
+offset_top = 118.0
+offset_right = 1443.0
+offset_bottom = 777.0
 texture = ExtResource("4_61j4g")
 
-[connection signal="input_event" from="CharacterBody2D" to="CharacterBody2D" method="_on_input_event"]
+[node name="Player 2" type="CharacterBody2D" parent="."]
+position = Vector2(210, 41)
+script = ExtResource("4_b3bkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 2"]
+position = Vector2(518, 525)
+shape = SubResource("RectangleShape2D_rheki")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player 2/CollisionShape2D"]
+position = Vector2(-7, 1)
+scale = Vector2(0.980392, 1.00246)
+sprite_frames = SubResource("SpriteFrames_3j6b7")
+animation = &"new_animation"
+
+[node name="Player1" parent="." instance=ExtResource("5_745op")]
