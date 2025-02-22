@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://denxur3nctq2w"]
+
+[ext_resource type="AudioStream" uid="uid://d2702v3oqd1cf" path="res://AssetsFinal/Audio/Music/MenuScreen.ogg" id="1_truqr"]
+
+[node name="AudioStartMenu" type="AudioStreamPlayer"]
+stream = ExtResource("1_truqr")
+autoplay = true

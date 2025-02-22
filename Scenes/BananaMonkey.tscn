@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh2gi724s6ab6"]
+[gd_scene load_steps=12 format=3 uid="uid://bh2gi724s6ab6"]
 
 [ext_resource type="Texture2D" uid="uid://d1uqddunqoy03" path="res://icon.svg" id="1_a8le1"]
+[ext_resource type="PackedScene" uid="uid://bt0nec8ukx72i" path="res://Scenes/audio_fighting.tscn" id="1_n5445"]
 [ext_resource type="PackedScene" uid="uid://cos8mfhp6767p" path="res://invisible_walls.tscn" id="2_iokrm"]
 [ext_resource type="Texture2D" uid="uid://csjifvomjb5ah" path="res://AssetsFinal/DesertBkgd_2024-02-21_1800.jpg" id="3_1206e"]
 [ext_resource type="Script" path="res://player_2.gd" id="4_f3jax"]
@@ -30,6 +31,8 @@ animations = [{
 
 [node name="BananaMonkey" type="Node2D"]
 position = Vector2(-68, -57)
+
+[node name="AudioFighting" parent="." instance=ExtResource("1_n5445")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(68, 63)
