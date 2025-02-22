@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cos8mfhp6767p"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ypcrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y067r"]
+size = Vector2(79, 564.5)
+
+[node name="Invisible Walls" type="Node2D"]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(51, 199)
+physics_material_override = SubResource("PhysicsMaterial_ypcrj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(55, 141.25)
+shape = SubResource("RectangleShape2D_y067r")
