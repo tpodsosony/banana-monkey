@@ -21,16 +21,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player 2" type="CharacterBody2D"]
+[node name="Player 2" type="CharacterBody2D" groups=["Player_2"]]
 position = Vector2(210, 41)
 script = ExtResource("1_1t7fv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(518, 525)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_rheki")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-7, 1)
+position = Vector2(1, -2)
 scale = Vector2(0.980392, 1.00246)
 sprite_frames = SubResource("SpriteFrames_3j6b7")
 animation = &"new_animation"

@@ -1,32 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh2gi724s6ab6"]
+[gd_scene load_steps=7 format=3 uid="uid://cbwh5fhq187ss"]
 
 [ext_resource type="Texture2D" uid="uid://d1uqddunqoy03" path="res://icon.svg" id="1_a8le1"]
 [ext_resource type="PackedScene" uid="uid://cos8mfhp6767p" path="res://invisible_walls.tscn" id="2_iokrm"]
 [ext_resource type="Texture2D" uid="uid://csjifvomjb5ah" path="res://AssetsFinal/DesertBkgd_2024-02-21_1800.jpg" id="3_1206e"]
-[ext_resource type="Script" path="res://player_2.gd" id="4_f3jax"]
-[ext_resource type="Texture2D" uid="uid://cn4awf7d3uetp" path="res://roguelikeChar_transparent.png" id="5_nhg87"]
+[ext_resource type="PackedScene" uid="uid://cswyxrpthip2g" path="res://Scenes/player_2.tscn" id="4_u2t06"]
 [ext_resource type="PackedScene" uid="uid://h1mobvebemti" path="res://Player1.tscn" id="6_0pxw0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c16yb"]
 size = Vector2(1153.75, 84)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rheki"]
-size = Vector2(23.5, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4tm5"]
-atlas = ExtResource("5_nhg87")
-region = Rect2(0, 51, 17, 17)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3j6b7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e4tm5")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
 
 [node name="BananaMonkey" type="Node2D"]
 position = Vector2(-68, -57)
@@ -57,18 +38,8 @@ offset_right = 1443.0
 offset_bottom = 777.0
 texture = ExtResource("3_1206e")
 
-[node name="Player 2" type="CharacterBody2D" parent="."]
-position = Vector2(210, 41)
-script = ExtResource("4_f3jax")
+[node name="Player 2" parent="." instance=ExtResource("4_u2t06")]
+position = Vector2(308, -92)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 2"]
-position = Vector2(518, 525)
-shape = SubResource("RectangleShape2D_rheki")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player 2/CollisionShape2D"]
-position = Vector2(-7, 1)
-scale = Vector2(0.980392, 1.00246)
-sprite_frames = SubResource("SpriteFrames_3j6b7")
-animation = &"new_animation"
-
-[node name="Player1" parent="." instance=ExtResource("6_0pxw0")]
+[node name="Player1" parent="." groups=["Player_1"] instance=ExtResource("6_0pxw0")]
+position = Vector2(253, 601)

@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://elninl8mwhlo" path="res://Themes/Banana Theme.tres" id="1_jamgu"]
 [ext_resource type="Script" path="res://Scenes/start_menu.gd" id="2_30k87"]
 [ext_resource type="Texture2D" uid="uid://6ymwiyaxn1rh" path="res://AssetsFinal/DesertBkgd2.jpg" id="2_dqs4v"]
-[ext_resource type="PackedScene" uid="uid://denxur3nctq2w" path="res://Scenes/audio_start_menu.tscn" id="3_ns4c7"]
+[ext_resource type="PackedScene" uid="uid://buc1gexqvg6nl" path="res://Scenes/audio_start_menu.tscn" id="3_ns4c7"]
 [ext_resource type="StyleBox" uid="uid://wuawt08d8tpn" path="res://Scenes/ButtonStyle.tres" id="3_pt24i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_clct7"]

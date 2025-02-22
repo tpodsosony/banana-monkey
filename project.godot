@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Banana Monkeys"
 
+[global_group]
+
+Player_2=""
+
 [input]
 
 ui_jab={

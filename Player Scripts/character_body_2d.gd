@@ -2,11 +2,17 @@ extends CharacterBody2D
 
 @onready var _animation_player = $AnimationPlayer
 
-@onready var player_2 = get_tree()
+@onready var gameref = get_parent()
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
+var player_2
+
+func _ready() -> void:
+	var root_node = get_parent()
+	player_2 = root_node.get_node("Player 2")
+	
 func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		_animation_player.play("walk")
@@ -16,10 +22,13 @@ func _process(_delta):
 	else:
 		_animation_player.stop()
 		
-	if player_2 < self.position.x:
+	if player_2.position.x > self.position.x:
 		$Sprite2D.flip_h=false
 	else:
 		$Sprite2D.flip_h=true
+		
+	print("Player 1: Position")
+	print(self.position.x)
 	
 	
 		
@@ -44,9 +53,4 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
 	
-
-
-func _on_player_2_position() -> void:
-	pass # Replace with function body.

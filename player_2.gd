@@ -4,10 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-signal player_2_position
-
 func _process(delta: float) -> void:
-	emit_signal("player_2_position", self.global_position)
+	print(self.position.x)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

@@ -45,16 +45,16 @@ _data = {
 }
 
 [node name="P1" type="CharacterBody2D"]
-position = Vector2(403, 458)
+position = Vector2(208, 528)
 script = ExtResource("1_dhrgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-122.5, 146.5)
+position = Vector2(4, 3)
 shape = SubResource("RectangleShape2D_71tln")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-124.5, 145.5)
-scale = Vector2(1.18182, 1.03125)
+position = Vector2(1.50002, 1.88351e-05)
+scale = Vector2(1.18182, 1)
 texture = ExtResource("2_heliu")
 hframes = 6
 
