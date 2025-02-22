@@ -1,0 +1,26 @@
+Marc Cacho
+2025-02-21
+
+Game-making tools:
+* Draw.io for flow chart to plan game
+* Obsidian is a free alternative to Milanote could use, with more capabilities
+* https://kenney.nl/starter-kits
+* webaim.org/resources/contrastchecker (accessibility)
+* gameaccessibilityguidelines.com/basic (accessibility)
+* pixelover to convert anything into pixel art, can convert 3D assets into pixel art
+* Marc is running courses through NewMediaManitoba. Ask him for more info. IDM CreatorLab is what it's called. Like 4 diff ones.
+
+* Should we have a start and quit button? Chris do this?
+* We should have a floor
+* Remember label is for text stuffo
+* Look at nodes and go to right thing > node > can see signals. These are like the functions you can work with in a script for that.
+* To make game over: 2D Node, Canvas Layer, VBox Container
+* "signal up, call down"
+* so usually script is higher and signals are lower
+* THere is no global way to store variables unless you... make Messenger.gd under project properites > Global. e.g. for signalGameStart signal GaveOver
+
+* When says needs a resource, it usually means you need to give it a shape on the right panel thingie
+* pinjoint for banana. Like Marc's pillow fighter game.
+
+* If not using a variable, still need to put it in the function, but do _ before. So like instead of (delta) do (_delta)
+* Viewport size: 

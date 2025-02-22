@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cglovj8dvai70"
-path="res://.godot/imported/BryceTerrainDesertMesh.png-4edff585717ad71b34dba19664130998.ctex"
+uid="uid://dkht823c1qsh5"
+path="res://.godot/imported/Bubblegum Round.png-603d9dfc66b94bd359b25e626833ea42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsWorking/ProgressPics/BryceTerrainDesertMesh.png"
-dest_files=["res://.godot/imported/BryceTerrainDesertMesh.png-4edff585717ad71b34dba19664130998.ctex"]
+source_file="res://AssetsFinal/Fonts/Bubblegum/Bubblegum Round.png"
+dest_files=["res://.godot/imported/Bubblegum Round.png-603d9dfc66b94bd359b25e626833ea42.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://txr7fw71eofb"
-path="res://.godot/imported/BryceTerrainStart.png-c3ffce7d7eba8bac1061c961d14a76f8.ctex"
+path="res://.godot/imported/BryceTerrainStart.png-eca0ac174fddabcf0a451a2e88f41c88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsWorking/Progress/BryceTerrainStart.png"
-dest_files=["res://.godot/imported/BryceTerrainStart.png-c3ffce7d7eba8bac1061c961d14a76f8.ctex"]
+source_file="res://AssetsWorking/ProgressPics/BryceTerrainStart.png"
+dest_files=["res://.godot/imported/BryceTerrainStart.png-eca0ac174fddabcf0a451a2e88f41c88.ctex"]
 
 [params]
 

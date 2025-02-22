@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cglovj8dvai70"
-path="res://.godot/imported/BryceTerrainDesertMesh.png-4edff585717ad71b34dba19664130998.ctex"
+uid="uid://6ymwiyaxn1rh"
+path="res://.godot/imported/DesertBkgd2.jpg-597dd00b753699521833bff336d3ebb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsWorking/ProgressPics/BryceTerrainDesertMesh.png"
-dest_files=["res://.godot/imported/BryceTerrainDesertMesh.png-4edff585717ad71b34dba19664130998.ctex"]
+source_file="res://AssetsFinal/DesertBkgd2.jpg"
+dest_files=["res://.godot/imported/DesertBkgd2.jpg-597dd00b753699521833bff336d3ebb3.ctex"]
 
 [params]
 
