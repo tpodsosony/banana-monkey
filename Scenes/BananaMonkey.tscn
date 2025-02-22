@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://bh2gi724s6ab6"]
 
-[ext_resource type="Texture2D" uid="uid://d1uqddunqoy03" path="res://icon.svg" id="1_3vevx"]
-[ext_resource type="PackedScene" uid="uid://cos8mfhp6767p" path="res://invisible_walls.tscn" id="3_u0cgs"]
-[ext_resource type="Texture2D" uid="uid://csjifvomjb5ah" path="res://AssetsFinal/DesertBkgd_2024-02-21_1800.jpg" id="4_61j4g"]
-[ext_resource type="Script" path="res://player_2.gd" id="4_b3bkx"]
-[ext_resource type="PackedScene" uid="uid://h1mobvebemti" path="res://Player1.tscn" id="5_745op"]
-[ext_resource type="Texture2D" uid="uid://cn4awf7d3uetp" path="res://roguelikeChar_transparent.png" id="6_sty7d"]
+[ext_resource type="Texture2D" uid="uid://d1uqddunqoy03" path="res://icon.svg" id="1_a8le1"]
+[ext_resource type="PackedScene" uid="uid://cos8mfhp6767p" path="res://invisible_walls.tscn" id="2_iokrm"]
+[ext_resource type="Texture2D" uid="uid://csjifvomjb5ah" path="res://AssetsFinal/DesertBkgd_2024-02-21_1800.jpg" id="3_1206e"]
+[ext_resource type="Script" path="res://player_2.gd" id="4_f3jax"]
+[ext_resource type="Texture2D" uid="uid://cn4awf7d3uetp" path="res://roguelikeChar_transparent.png" id="5_nhg87"]
+[ext_resource type="PackedScene" uid="uid://h1mobvebemti" path="res://Player1.tscn" id="6_0pxw0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c16yb"]
 size = Vector2(1153.75, 84)
@@ -14,7 +14,7 @@ size = Vector2(1153.75, 84)
 size = Vector2(23.5, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4tm5"]
-atlas = ExtResource("6_sty7d")
+atlas = ExtResource("5_nhg87")
 region = Rect2(0, 51, 17, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3j6b7"]
@@ -28,7 +28,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="BananaMonkey" type="Node2D"]
 position = Vector2(-68, -57)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -41,12 +41,12 @@ shape = SubResource("RectangleShape2D_c16yb")
 [node name="Icon" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
 position = Vector2(1, -3)
 scale = Vector2(9.00781, 0.65625)
-texture = ExtResource("1_3vevx")
+texture = ExtResource("1_a8le1")
 
-[node name="Invisible Walls" parent="." instance=ExtResource("3_u0cgs")]
+[node name="Invisible Walls" parent="." instance=ExtResource("2_iokrm")]
 position = Vector2(4, 1)
 
-[node name="Invisible Walls2" parent="." instance=ExtResource("3_u0cgs")]
+[node name="Invisible Walls2" parent="." instance=ExtResource("2_iokrm")]
 position = Vector2(1079, 3)
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -55,11 +55,11 @@ offset_left = 73.0
 offset_top = 118.0
 offset_right = 1443.0
 offset_bottom = 777.0
-texture = ExtResource("4_61j4g")
+texture = ExtResource("3_1206e")
 
 [node name="Player 2" type="CharacterBody2D" parent="."]
 position = Vector2(210, 41)
-script = ExtResource("4_b3bkx")
+script = ExtResource("4_f3jax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player 2"]
 position = Vector2(518, 525)
@@ -71,4 +71,4 @@ scale = Vector2(0.980392, 1.00246)
 sprite_frames = SubResource("SpriteFrames_3j6b7")
 animation = &"new_animation"
 
-[node name="Player1" parent="." instance=ExtResource("5_745op")]
+[node name="Player1" parent="." instance=ExtResource("6_0pxw0")]
