@@ -22,7 +22,7 @@ position = Vector2(-137.5, 120.5)
 shape = SubResource("RectangleShape2D_plsgf")
 
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
-position = Vector2(1.5, -1.5)
+position = Vector2(0.500003, -4.5)
 scale = Vector2(0.578125, 0.695313)
 texture = ExtResource("1_3vevx")
 
