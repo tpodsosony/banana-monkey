@@ -16,7 +16,7 @@ func _process(_delta):
 	else:
 		_animation_player.stop()
 		
-	#emit_signal("position_changed", self.global_position)
+	emit_signal("position_changed", self.global_position)
 		
 	#if Input.is_action_pressed("ui_jab"):
 		

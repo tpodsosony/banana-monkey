@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://elninl8mwhlo"]
+
+[ext_resource type="StyleBox" uid="uid://ctkp7sik2nmpu" path="res://Scenes/ButtonHoverStyle.tres" id="1_ge0c5"]
+[ext_resource type="StyleBox" uid="uid://wuawt08d8tpn" path="res://Scenes/ButtonStyle.tres" id="1_pf0vg"]
+[ext_resource type="FontFile" uid="uid://dupdhlts4osjp" path="res://AssetsFinal/Fonts/Anchovy/PC/Anchovy.ttf" id="1_vhwkh"]
+
+[resource]
+resource_name = "BananaTheme"
+default_font = ExtResource("1_vhwkh")
+default_font_size = 30
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = ExtResource("1_ge0c5")
+Button/styles/normal = ExtResource("1_pf0vg")
+Button/styles/pressed = ExtResource("1_ge0c5")
+Label/colors/font_color = Color(1, 1, 0.666667, 1)
+Label/font_sizes/font_size = 70
