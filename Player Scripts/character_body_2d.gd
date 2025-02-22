@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var _animation_player = $AnimationPlayer
 
+@onready var player_2 = get_tree()
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
@@ -9,14 +10,18 @@ const JUMP_VELOCITY = -400.0
 func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		_animation_player.play("walk")
-		$Sprite2D.flip_h=false
 	elif Input.is_action_pressed("ui_left"):
 		_animation_player.play("walk")
-		$Sprite2D.flip_h=true
+		
 	else:
 		_animation_player.stop()
 		
-	emit_signal("position_changed", self.global_position)
+	if player_2 < self.position.x:
+		$Sprite2D.flip_h=false
+	else:
+		$Sprite2D.flip_h=true
+	
+	
 		
 	#if Input.is_action_pressed("ui_jab"):
 		
@@ -41,3 +46,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	
+
+
+func _on_player_2_position() -> void:
+	pass # Replace with function body.

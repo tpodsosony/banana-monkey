@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 func _on_start_pressed() -> void:
 	# prints "Start pressed" to debugger screen thingie =)
 	print("Start pressed")
-	get_tree().change_scene_to_file("res://node_2d.tscn")
+	get_tree().change_scene_to_file("res://Scenes/BananaMonkey.tscn")
 
 
 func _on_exit_pressed() -> void:
