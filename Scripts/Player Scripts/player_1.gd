@@ -58,7 +58,7 @@ func _physics_process(delta: float) -> void:
 		curDirection = 1
 	else:
 		$Sprite2D.flip_h=true
-		curDirection = 0
+		curDirection = -1
 
 	move_and_slide()
 	
@@ -80,5 +80,4 @@ func shoot():
 		projectile_temp.global_position = position
 		owner.add_child(projectile_temp)
 		projectile_temp.direction = curDirection
-		projectile_temp._animation_player.play("shoot")
 	
