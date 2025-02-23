@@ -15,6 +15,7 @@ var player_2
 var currentHealth
 var maxHealth = 100
 var isHurt
+var curDirection
 
 # ready runs when this node first starts
 func _ready() -> void:
@@ -23,19 +24,6 @@ func _ready() -> void:
 	currentHealth = maxHealth
 	
 func _process(_delta):
-	#if Input.is_action_pressed("ui_right"):
-		#_animation_player.play("walk")
-	#elif Input.is_action_pressed("ui_left"):
-		#_animation_player.play("walk")
-		
-	#else:
-		#_animation_player.stop()
-		
-	if player_2.position.x > self.position.x:
-		$Sprite2D.flip_h=false
-	else:
-		$Sprite2D.flip_h=true
-		
 	print("Player1: Position")
 	print(self.position.x)
 	
@@ -67,8 +55,10 @@ func _physics_process(delta: float) -> void:
 		
 	if player_2.position.x > self.position.x:
 		$Sprite2D.flip_h=false
+		curDirection = 1
 	else:
 		$Sprite2D.flip_h=true
+		curDirection = 0
 
 	move_and_slide()
 	
@@ -89,5 +79,6 @@ func shoot():
 		var projectile_temp = projectile.instantiate()
 		projectile_temp.global_position = position
 		owner.add_child(projectile_temp)
-		projectile_temp.direction = 1
+		projectile_temp.direction = curDirection
+		projectile_temp._animation_player.play("shoot")
 	
