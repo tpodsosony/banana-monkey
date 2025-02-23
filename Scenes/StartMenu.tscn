@@ -140,6 +140,7 @@ theme_override_font_sizes/font_size = 30
 text = "     P2"
 
 [node name="TextureRect" type="TextureRect" parent="Controls"]
+texture_filter = 2
 anchors_preset = -1
 anchor_left = 0.177
 anchor_top = 0.739
@@ -158,17 +159,19 @@ expand_mode = 1
 
 [node name="LabelCredits" type="Label" parent="Credits"]
 anchors_preset = -1
-anchor_left = 0.819
-anchor_top = 0.749
-anchor_right = 0.819
-anchor_bottom = 0.749
-offset_left = -203.488
-offset_top = -163.352
-offset_right = 204.512
-offset_bottom = 163.648
+anchor_left = 0.813
+anchor_top = 0.738
+anchor_right = 0.813
+anchor_bottom = 0.738
+offset_left = -203.576
+offset_top = -163.224
+offset_right = 204.424
+offset_bottom = 163.776
 theme = ExtResource("1_jamgu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 17
+theme_override_colors/font_outline_color = Color(1, 0.968627, 0.670588, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 16
 text = "Creators:
 
   Tal: Concept, 	
@@ -184,7 +187,8 @@ Other:
         DamienG
   Palette: buzzybees by 
            ATB Man
-           (on lospec)"
+           (on lospec)
+  Godot4, Bryce7, Reaper"
 autowrap_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_pressed"]
