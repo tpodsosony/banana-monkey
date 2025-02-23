@@ -21,6 +21,7 @@ project/assembly_name="Banana Monkeys"
 
 [global_group]
 
+Player_1=""
 Player_2=""
 
 [input]

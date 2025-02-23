@@ -44,7 +44,7 @@ _data = {
 "walk": SubResource("Animation_bgas0")
 }
 
-[node name="Player1" type="CharacterBody2D"]
+[node name="Player1" type="CharacterBody2D" groups=["Player_1"]]
 position = Vector2(179, 519)
 script = ExtResource("1_dhrgu")
 

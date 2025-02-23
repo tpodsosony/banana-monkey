@@ -6,10 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8w4n"]
 size = Vector2(46.0161, 71.1011)
 
-[sub_resource type="Animation" id="Animation_xv3d6"]
-resource_name = "shoot"
-loop_mode = 1
-
 [sub_resource type="Animation" id="Animation_04yiy"]
 length = 0.001
 tracks/0/type = "value"
@@ -24,6 +20,10 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+
+[sub_resource type="Animation" id="Animation_xv3d6"]
+resource_name = "shoot"
+loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_aa50p"]
 resource_name = "throw"
@@ -70,3 +70,6 @@ hframes = 8
 libraries = {
 "": SubResource("AnimationLibrary_re5u5")
 }
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

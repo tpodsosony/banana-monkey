@@ -103,3 +103,5 @@ func shoot():
 	# Set the projectile's starting position
 		projectile_temp.position = position
 		
+		projectile_temp.damageGroup = "Player_2"
+		
