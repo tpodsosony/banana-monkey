@@ -25,8 +25,9 @@ func destroy():
 func _on_body_entered(_body):
 	if _body.is_in_group(damageGroup):
 		destroy()
-		_body.OnHit(5)
+		_body.OnHit(DAMAGE)
 		AudioController.play_banana()
+		
 		
 
 func _on_area_entered(area: Area2D):
