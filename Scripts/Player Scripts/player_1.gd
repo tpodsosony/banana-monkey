@@ -101,3 +101,5 @@ func validateHealth():
 	if(currentHealth < 0):
 		currentHealth = 0
 		canMove = false
+		$P2Win.visible = true
+		$VBoxContainer.visible = true

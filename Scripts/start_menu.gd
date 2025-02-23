@@ -37,3 +37,7 @@ func _on_exit_pressed() -> void:
 	print("Exit pressed")
 	# this is the line to quit the game
 	get_tree().quit()
+
+
+func _on_play_again_pressed() -> void:
+	pass # Replace with function body.

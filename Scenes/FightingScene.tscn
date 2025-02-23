@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbwh5fhq187ss"]
+[gd_scene load_steps=14 format=3 uid="uid://cbwh5fhq187ss"]
 
+[ext_resource type="PackedScene" uid="uid://barymwlpyakuh" path="res://Scenes/WinLose.tscn" id="1_jn17u"]
 [ext_resource type="Texture2D" uid="uid://d1uqddunqoy03" path="res://AssetsFinal/Sprites/Other/icon.svg" id="1_p0nmk"]
 [ext_resource type="PackedScene" uid="uid://naslf5cp7p85" path="res://Scenes/FightingMusic.tscn" id="1_x4vh3"]
 [ext_resource type="PackedScene" uid="uid://cos8mfhp6767p" path="res://Scenes/invisible_walls.tscn" id="2_eswe6"]
@@ -17,6 +18,8 @@ size = Vector2(1153.75, 84)
 
 [node name="FightingScene" type="Node2D"]
 position = Vector2(-72, -60)
+
+[node name="WinLose" parent="." instance=ExtResource("1_jn17u")]
 
 [node name="FightingMusic" parent="." instance=ExtResource("1_x4vh3")]
 
