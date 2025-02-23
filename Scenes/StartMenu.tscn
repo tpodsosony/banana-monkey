@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4qygfp3ofhus"]
+[gd_scene load_steps=8 format=3 uid="uid://c4qygfp3ofhus"]
 
 [ext_resource type="Theme" uid="uid://elninl8mwhlo" path="res://Themes/Banana Theme.tres" id="1_jamgu"]
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="2_30k87"]
 [ext_resource type="Texture2D" uid="uid://6ymwiyaxn1rh" path="res://AssetsFinal/Bkgd/DesertBkgd2.jpg" id="2_dqs4v"]
 [ext_resource type="PackedScene" uid="uid://buc1gexqvg6nl" path="res://Scenes/StartMenuMusic.tscn" id="3_ns4c7"]
 [ext_resource type="StyleBox" uid="uid://wuawt08d8tpn" path="res://Themes/ButtonStyle.tres" id="3_pt24i"]
+[ext_resource type="Texture2D" uid="uid://drxr587jqyx3c" path="res://AssetsFinal/Sprites/Other/keyboard_colours.png" id="6_1y3qq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_clct7"]
 texture = ExtResource("2_dqs4v")
@@ -34,10 +35,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_clct7")
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.00434028
-anchor_top = 0.214506
-anchor_right = 0.99566
-anchor_bottom = 0.444444
+anchor_top = 0.17284
+anchor_right = 1.0
+anchor_bottom = 0.402778
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -54,14 +54,14 @@ metadata/_edit_use_anchors_ = true
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.479
-anchor_top = 0.628
-anchor_right = 0.479
-anchor_bottom = 0.628
-offset_left = -151.808
-offset_top = -55.944
-offset_right = 152.192
-offset_bottom = 84.056
+anchor_left = 0.482
+anchor_top = 0.688
+anchor_right = 0.482
+anchor_bottom = 0.688
+offset_left = -152.264
+offset_top = -121.824
+offset_right = 151.736
+offset_bottom = 122.176
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -73,6 +73,24 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = ExtResource("3_pt24i")
 text = "Start Game"
 
+[node name="ControlsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("3_pt24i")
+toggle_mode = true
+text = "Controls
+"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("3_pt24i")
+toggle_mode = true
+text = "Credits
+"
+
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -81,5 +99,99 @@ theme_override_styles/normal = ExtResource("3_pt24i")
 text = "Exit
 "
 
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="LabelP1" type="Label" parent="Controls"]
+anchors_preset = -1
+anchor_left = 0.139
+anchor_top = 0.61
+anchor_right = 0.139
+anchor_bottom = 0.61
+offset_left = -114.128
+offset_top = 38.72
+offset_right = 125.872
+offset_bottom = 65.72
+rotation = -0.436332
+theme = ExtResource("1_jamgu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.827451, 0.835294, 1, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "P1"
+
+[node name="LabelP2" type="Label" parent="Controls"]
+anchors_preset = -1
+anchor_left = 0.139
+anchor_top = 0.61
+anchor_right = 0.139
+anchor_bottom = 0.61
+offset_left = -114.128
+offset_top = 38.72
+offset_right = 125.872
+offset_bottom = 65.72
+rotation = -0.436332
+theme = ExtResource("1_jamgu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.827451, 0.839216, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "     P2"
+
+[node name="TextureRect" type="TextureRect" parent="Controls"]
+texture_filter = 2
+anchors_preset = -1
+anchor_left = 0.177
+anchor_top = 0.739
+anchor_right = 0.177
+anchor_bottom = 0.739
+offset_left = -195.904
+offset_top = 25.128
+offset_right = 1687.1
+offset_bottom = 628.128
+rotation = -0.436332
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_1y3qq")
+expand_mode = 1
+
+[node name="Credits" type="CanvasLayer" parent="."]
+
+[node name="LabelCredits" type="Label" parent="Credits"]
+anchors_preset = -1
+anchor_left = 0.813
+anchor_top = 0.738
+anchor_right = 0.813
+anchor_bottom = 0.738
+offset_left = -203.576
+offset_top = -163.224
+offset_right = 204.424
+offset_bottom = 163.776
+theme = ExtResource("1_jamgu")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.968627, 0.670588, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 16
+text = "Creators:
+
+  Tal: Concept, 	
+       Programming, 
+       SoundFX
+  Chris: Art, Music,   
+         Programming
+
+
+Other:
+
+  Font: Anchovy by  
+        DamienG
+  Palette: buzzybees by 
+           ATB Man
+           (on lospec)
+  Godot4, Bryce7, Reaper"
+autowrap_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_pressed"]
+[connection signal="toggled" from="VBoxContainer/ControlsButton" to="." method="_on_controls_toggled"]
+[connection signal="toggled" from="VBoxContainer/CreditsButton" to="." method="_on_credits_toggled"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]

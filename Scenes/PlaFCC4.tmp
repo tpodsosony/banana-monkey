@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cswyxrpthip2g"]
+
+[ext_resource type="Script" path="res://Scripts/Player Scripts/player_2.gd" id="1_1t7fv"]
+[ext_resource type="Texture2D" uid="uid://cn4awf7d3uetp" path="res://AssetsFinal/Sprites/Other/roguelikeChar_transparent.png" id="2_vb4ti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rheki"]
+size = Vector2(23.5, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4tm5"]
+atlas = ExtResource("2_vb4ti")
+region = Rect2(0, 51, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3j6b7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4tm5")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Player 2" type="CharacterBody2D" groups=["Player_2"]]
+position = Vector2(378, 581)
+script = ExtResource("1_1t7fv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_rheki")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(1, -2)
+scale = Vector2(0.980392, 1.00246)
+sprite_frames = SubResource("SpriteFrames_3j6b7")
+animation = &"new_animation"

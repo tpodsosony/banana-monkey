@@ -1,5 +1,8 @@
 extends CharacterBody2D
+
+# we make a class for the health bar script
 class_name player_1
+# signal also for health bar, so can get updated
 signal healthChanged
 
 @onready var _animation_player = $AnimationPlayer
@@ -15,6 +18,7 @@ var player_2
 var currentHealth
 var maxHealth = 100
 var isHurt
+var curDirection
 
 # ready runs when this node first starts
 func _ready() -> void:
@@ -23,21 +27,23 @@ func _ready() -> void:
 	currentHealth = maxHealth
 	
 func _process(_delta):
-	#if Input.is_action_pressed("ui_right"):
-		#_animation_player.play("walk")
-	#elif Input.is_action_pressed("ui_left"):
-		#_animation_player.play("walk")
-		
+	# Player 1 movement vector
+	var velocity = Vector2.ZERO
+	# Directions for moving, from: https://docs.godotengine.org/en/stable/getting_started/first_2d_game/03.coding_the_player.html 
+	if Input.is_action_pressed("p1_right"):
+		velocity.x += 1
+	if Input.is_action_pressed("p1_left"):
+		velocity.x -= 1
+	# 
+	## Play walking animation if moving, otherwise no -CH (I think Tal already does this later maybe, so this not needed)
+	#if velocity.length() > 0:
+		#$AnimatedSprite2D.play()
 	#else:
-		#_animation_player.stop()
-		
-	if player_2.position.x > self.position.x:
-		$Sprite2D.flip_h=false
-	else:
-		$Sprite2D.flip_h=true
-		
-	print("Player1: Position")
-	print(self.position.x)
+		#$AnimatedSprite2D.stop()
+	
+	# at some point wanted to print positions but not needed any more
+	# print("Player1: Position")
+	# print(self.position.x)
 	
 	
 		
@@ -51,13 +57,13 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+	if Input.is_action_just_pressed("p1_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
+	# not sure what this is for -CH
 	shoot()
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("p1_left", "p1_right")
 	if direction:
 		_animation_player.play("walk")
 		velocity.x = direction * SPEED
@@ -67,8 +73,10 @@ func _physics_process(delta: float) -> void:
 		
 	if player_2.position.x > self.position.x:
 		$Sprite2D.flip_h=false
+		curDirection = 1 # set current Direction to RIGHT (1; positive)
 	else:
 		$Sprite2D.flip_h=true
+		curDirection = -1 # set current Direction to LEFT (-1; negative)
 
 	move_and_slide()
 	
@@ -85,9 +93,13 @@ func hurtByEnemy(_area):
 	# at  4:03
 	
 func shoot():
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("p1_b"):
 		var projectile_temp = projectile.instantiate()
 		projectile_temp.global_position = position
 		owner.add_child(projectile_temp)
-		projectile_temp.direction = 1
+		projectile_temp.direction = curDirection
+		projectile_temp._animation_player.play("shoot")
 	
+	# Set the projectile's starting position
+		projectile_temp.position = position
+		
