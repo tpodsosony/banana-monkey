@@ -19,7 +19,8 @@ func destroy():
 	
 func _on_body_entered(_body):
 	print(_body)
-	destroy()
+	if _body.is_in_group(damageGroup):
+		destroy()
 	
 	
 
