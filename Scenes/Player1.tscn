@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://btel85nlh8mrx" path="res://AssetsFinal/Sprites/Other/2d_animation_player-run.webp" id="2_heliu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71tln"]
-size = Vector2(39, 33)
+size = Vector2(31, 36)
 
 [sub_resource type="Animation" id="Animation_fymgd"]
 length = 0.001
@@ -45,16 +45,16 @@ _data = {
 }
 
 [node name="Player1" type="CharacterBody2D"]
-position = Vector2(208, 528)
+position = Vector2(179, 519)
 script = ExtResource("1_dhrgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 3)
+position = Vector2(5.5, 14)
 shape = SubResource("RectangleShape2D_71tln")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.50002, 1.88351e-05)
-scale = Vector2(1.18182, 1)
+position = Vector2(6.50001, 8.00003)
+scale = Vector2(1.30303, 1.375)
 texture = ExtResource("2_heliu")
 hframes = 6
 

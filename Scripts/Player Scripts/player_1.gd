@@ -4,7 +4,7 @@ signal healthChanged
 
 @onready var _animation_player = $AnimationPlayer
 
-@onready var gameref = get_parent()
+@onready var projectile = preload("res://Scenes/projectile.tscn")
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
@@ -23,13 +23,13 @@ func _ready() -> void:
 	currentHealth = maxHealth
 	
 func _process(_delta):
-	if Input.is_action_pressed("ui_right"):
-		_animation_player.play("walk")
-	elif Input.is_action_pressed("ui_left"):
-		_animation_player.play("walk")
+	#if Input.is_action_pressed("ui_right"):
+		#_animation_player.play("walk")
+	#elif Input.is_action_pressed("ui_left"):
+		#_animation_player.play("walk")
 		
-	else:
-		_animation_player.stop()
+	#else:
+		#_animation_player.stop()
 		
 	if player_2.position.x > self.position.x:
 		$Sprite2D.flip_h=false
@@ -53,13 +53,22 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	shoot()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
+		_animation_player.play("walk")
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		_animation_player.stop()
+		
+	if player_2.position.x > self.position.x:
+		$Sprite2D.flip_h=false
+	else:
+		$Sprite2D.flip_h=true
 
 	move_and_slide()
 	
@@ -67,7 +76,7 @@ func _physics_process(delta: float) -> void:
 func hurtByEnemy(_area):
 	currentHealth -= 10
 	if currentHealth < 0:
-		currentHealth = maxHealth
+		currentHealth = 0
 	isHurt = true
 	healthChanged.emit()
 	
@@ -75,4 +84,10 @@ func hurtByEnemy(_area):
 	# https://www.youtube.com/watch?v=UEJcUnq2dfU
 	# at  4:03
 	
+func shoot():
+	if Input.is_action_just_pressed("ui_accept"):
+		var projectile_temp = projectile.instantiate()
+		projectile_temp.global_position = position
+		owner.add_child(projectile_temp)
+		projectile_temp.direction = 1
 	
