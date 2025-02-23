@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://csjifvomjb5ah" path="res://AssetsFinal/Bkgd/DesertBkgd_2024-02-21_1800.jpg" id="3_t4pjx"]
 [ext_resource type="PackedScene" uid="uid://cswyxrpthip2g" path="res://Scenes/Player2.tscn" id="4_m71gc"]
 [ext_resource type="PackedScene" uid="uid://h1mobvebemti" path="res://Scenes/Player1.tscn" id="5_sj1l2"]
-[ext_resource type="Script" path="res://Scripts/health_bar_p1.gd" id="7_7qamt"]
+[ext_resource type="PackedScene" uid="uid://cft7noqopwjfu" path="res://Scenes/HealthBarP1.tscn" id="7_20blb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c16yb"]
 size = Vector2(1153.75, 84)
@@ -48,13 +48,14 @@ position = Vector2(308, -92)
 [node name="Player1" parent="." groups=["Player_1"] instance=ExtResource("5_sj1l2")]
 position = Vector2(253, 601)
 
-[node name="P1HealthBar" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="P1HealthBar" node_paths=PackedStringArray("player_1")]
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 114.0
-offset_bottom = 27.0
-value = 50.0
-script = ExtResource("7_7qamt")
-player_1 = NodePath("../../Player1")
+[node name="P1HealthBar" parent="." node_paths=PackedStringArray("player_1") instance=ExtResource("7_20blb")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 187.0
+offset_top = 163.0
+offset_right = 375.0
+offset_bottom = 226.0
+player_1 = NodePath("../Player1")
