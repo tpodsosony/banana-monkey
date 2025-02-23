@@ -14,7 +14,7 @@ func _ready() -> void:
 	update()
 
 func update():
-	value = player_1.currentHealth * 100 / player_1.maxHealth
+	value = player_1.currentHealth * 100 / player_1.MAX_HEALTH
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

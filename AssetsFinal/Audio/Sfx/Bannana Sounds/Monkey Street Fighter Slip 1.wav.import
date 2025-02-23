@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dyyuywx3r87vb"
+path="res://.godot/imported/Monkey Street Fighter Slip 1.wav-91267ba96fe8e6a6e7e4286b79c49fad.sample"
+
+[deps]
+
+source_file="res://AssetsFinal/Audio/Sfx/Bannana Sounds/Monkey Street Fighter Slip 1.wav"
+dest_files=["res://.godot/imported/Monkey Street Fighter Slip 1.wav-91267ba96fe8e6a6e7e4286b79c49fad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbpwt7ek5gmel"
+path="res://.godot/imported/Monkey Street Fighter Splat 2 - 2.wav-033febdaed2663b00b7d1aa314a1116c.sample"
+
+[deps]
+
+source_file="res://AssetsFinal/Audio/Sfx/Bannana Sounds/Monkey Street Fighter Splat 2 - 2.wav"
+dest_files=["res://.godot/imported/Monkey Street Fighter Splat 2 - 2.wav-033febdaed2663b00b7d1aa314a1116c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
