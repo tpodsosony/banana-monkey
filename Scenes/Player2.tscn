@@ -1,36 +1,66 @@
-[gd_scene load_steps=6 format=3 uid="uid://cswyxrpthip2g"]
+[gd_scene load_steps=7 format=3 uid="uid://dwboansyciqoe"]
 
-[ext_resource type="Script" path="res://Scripts/Player Scripts/player_2.gd" id="1_1t7fv"]
-[ext_resource type="Texture2D" uid="uid://cn4awf7d3uetp" path="res://AssetsFinal/Sprites/Other/roguelikeChar_transparent.png" id="2_vb4ti"]
+[ext_resource type="Script" path="res://Scripts/Player Scripts/player_1.gd" id="1_40pi5"]
+[ext_resource type="Texture2D" uid="uid://btel85nlh8mrx" path="res://AssetsFinal/Sprites/Other/2d_animation_player-run.webp" id="3_0r582"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rheki"]
-size = Vector2(23.5, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71tln"]
+size = Vector2(63, 63)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e4tm5"]
-atlas = ExtResource("2_vb4ti")
-region = Rect2(0, 51, 17, 17)
+[sub_resource type="Animation" id="Animation_fymgd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3j6b7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e4tm5")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
+[sub_resource type="Animation" id="Animation_bgas0"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 2.23333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 1, 2, 3, 4, 1, 0]
+}
 
-[node name="Player 2" type="CharacterBody2D" groups=["Player_2"]]
-position = Vector2(378, 581)
-script = ExtResource("1_1t7fv")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jflrl"]
+_data = {
+"RESET": SubResource("Animation_fymgd"),
+"walk": SubResource("Animation_bgas0")
+}
+
+[node name="Player2" type="CharacterBody2D"]
+position = Vector2(179, 519)
+script = ExtResource("1_40pi5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_rheki")
+position = Vector2(21.5, 0.5)
+shape = SubResource("RectangleShape2D_71tln")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(1, -2)
-scale = Vector2(0.980392, 1.00246)
-sprite_frames = SubResource("SpriteFrames_3j6b7")
-animation = &"new_animation"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(22.5, -11)
+scale = Vector2(2.75758, 2.5625)
+texture = ExtResource("3_0r582")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jflrl")
+}
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
