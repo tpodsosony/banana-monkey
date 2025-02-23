@@ -85,6 +85,8 @@ func shoot():
 		
 func OnHit(damage: int):
 	currentHealth -= damage
+	validateHealth()
+	#healthChanged.emit(currentHealth)
 	
 func validateHealth():
 	if(currentHealth < 0):

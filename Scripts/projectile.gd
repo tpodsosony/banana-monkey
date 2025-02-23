@@ -26,5 +26,4 @@ func _on_body_entered(_body):
 		print(_body.currentHealth)
 
 func _on_area_entered(area: Area2D):
-	print(area)
-	destroy()
+	pass

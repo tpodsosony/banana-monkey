@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pfmtxrgb3vnh"
-path="res://.godot/imported/health_bar_back.png-62fd35c383ba65cfbfea0a3589516a81.ctex"
+uid="uid://c1v2yus3i4l5"
+path="res://.godot/imported/MonkeyIdleSheet_1x4.png-d444a04da8e357c82666f966a9050501.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsWorking/Sprites/archive/v1/health_bar_back.png"
-dest_files=["res://.godot/imported/health_bar_back.png-62fd35c383ba65cfbfea0a3589516a81.ctex"]
+source_file="res://AssetsFinal/Sprites/MonkeyIdleSheet_1x4.png"
+dest_files=["res://.godot/imported/MonkeyIdleSheet_1x4.png-d444a04da8e357c82666f966a9050501.ctex"]
 
 [params]
 

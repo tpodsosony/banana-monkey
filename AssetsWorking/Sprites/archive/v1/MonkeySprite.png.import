@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pfmtxrgb3vnh"
-path="res://.godot/imported/health_bar_back.png-62fd35c383ba65cfbfea0a3589516a81.ctex"
+uid="uid://b8db3vo4d8wyj"
+path="res://.godot/imported/MonkeySprite.png-f678f80dd53cac7ff5a9d2753cf25d3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsWorking/Sprites/archive/v1/health_bar_back.png"
-dest_files=["res://.godot/imported/health_bar_back.png-62fd35c383ba65cfbfea0a3589516a81.ctex"]
+source_file="res://AssetsWorking/Sprites/archive/v1/MonkeySprite.png"
+dest_files=["res://.godot/imported/MonkeySprite.png-f678f80dd53cac7ff5a9d2753cf25d3e.ctex"]
 
 [params]
 
