@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b211ly0jigm6v"]
+
+[ext_resource type="PackedScene" uid="uid://cft7noqopwjfu" path="res://Scenes/HealthBarP1.tscn" id="1_tj3t4"]
+[ext_resource type="Script" path="res://Scripts/HealthBarP2.gd" id="2_2ktf4"]
+
+[node name="TextureProgressBar" type="TextureProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" parent="." instance=ExtResource("1_tj3t4")]
+layout_mode = 1
+fill_mode = 1
+script = ExtResource("2_2ktf4")

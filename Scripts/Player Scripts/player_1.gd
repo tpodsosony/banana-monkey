@@ -11,12 +11,12 @@ signal healthChanged
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
+const MAX_HEALTH = 100
 
 # set up variables
 var player_1
 var player_2
 var currentHealth
-var maxHealth = 100
 var isHurt
 var curDirection
 
@@ -24,30 +24,8 @@ var curDirection
 func _ready() -> void:
 	var root_node = get_parent()
 	player_2 = root_node.get_node("Player2")
-	currentHealth = maxHealth
+	currentHealth = MAX_HEALTH
 	
-func _process(_delta):
-	# Player 1 movement vector
-	var velocity = Vector2.ZERO
-	# Directions for moving, from: https://docs.godotengine.org/en/stable/getting_started/first_2d_game/03.coding_the_player.html 
-	if Input.is_action_pressed("p1_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("p1_left"):
-		velocity.x -= 1
-	# 
-	## Play walking animation if moving, otherwise no -CH (I think Tal already does this later maybe, so this not needed)
-	#if velocity.length() > 0:
-		#$AnimatedSprite2D.play()
-	#else:
-		#$AnimatedSprite2D.stop()
-	
-	# at some point wanted to print positions but not needed any more
-	# print("Player1: Position")
-	# print(self.position.x)
-	
-	
-		
-	#if Input.is_action_pressed("ui_jab"):
 		
 	
 
@@ -105,3 +83,11 @@ func shoot():
 		
 		projectile_temp.damageGroup = "Player_2"
 		
+func OnHit(damage: int):
+	currentHealth -= damage
+	validateHealth()
+	#healthChanged.emit(currentHealth)
+	
+func validateHealth():
+	if(currentHealth < 0):
+		currentHealth = 0

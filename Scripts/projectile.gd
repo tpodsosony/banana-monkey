@@ -3,6 +3,7 @@ extends Area2D
 @onready var _animation_player = $AnimationPlayer
 
 var damageGroup
+const DAMAGE = 10
 
 var speed = 300
 var direction = 1 # Default, but will be set by the player
@@ -21,10 +22,8 @@ func _on_body_entered(_body):
 	print(_body)
 	if _body.is_in_group(damageGroup):
 		destroy()
-	
-	
-
+		_body.OnHit(5)
+		print(_body.currentHealth)
 
 func _on_area_entered(area: Area2D):
-	print(area)
-	destroy()
+	pass

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://sw2024ctr4sk"
+path="res://.godot/imported/Monkey Ooo 5.wav-6b3c49f1b7a4acaea64e62002a0cfb94.sample"
+
+[deps]
+
+source_file="res://AssetsFinal/Audio/Sfx/Monkey Sounds/Monkey Ooo 5.wav"
+dest_files=["res://.godot/imported/Monkey Ooo 5.wav-6b3c49f1b7a4acaea64e62002a0cfb94.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

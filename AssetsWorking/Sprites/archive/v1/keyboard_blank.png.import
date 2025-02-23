@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://biod8wgci06v3"
-path="res://.godot/imported/keyboard_blank.png-c5f923e05b3fe626b1a40eee55f87f05.ctex"
+path="res://.godot/imported/keyboard_blank.png-41e106c21f4ffc2bf9a05d1e65b735d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetsWorking/Sprites/keyboard_blank.png"
-dest_files=["res://.godot/imported/keyboard_blank.png-c5f923e05b3fe626b1a40eee55f87f05.ctex"]
+source_file="res://AssetsWorking/Sprites/archive/v1/keyboard_blank.png"
+dest_files=["res://.godot/imported/keyboard_blank.png-41e106c21f4ffc2bf9a05d1e65b735d7.ctex"]
 
 [params]
 
