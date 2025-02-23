@@ -10,7 +10,7 @@ signal healthChanged
 @onready var projectile = preload("res://Scenes/projectile.tscn")
 
 const SPEED = 150.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 const MAX_HEALTH = 100
 
 # set up variables
@@ -19,44 +19,47 @@ var player_1
 var currentHealth
 var isHurt
 var curDirection
+var canMove : bool
 
 # ready runs when this node first starts
 func _ready() -> void:
 	var root_node = get_parent()
 	player_1 = root_node.get_node("Player1")
 	currentHealth = MAX_HEALTH
+	canMove = true
 	
 func _process(_delta):
 	# Player 2 movement vector
-	var velocity = Vector2.ZERO
+	if velocity == Vector2.ZERO:
+		_animation_player.play("idle")
 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("p2_jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		
-	# not sure what this is for -CH
-	shoot()
-	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("p2_left", "p2_right")
-	if direction:
-		_animation_player.play("walk")
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		_animation_player.stop()
-		
-	if player_1.position.x > self.position.x:
-		$Sprite2D.flip_h=false
-		curDirection = 1
-	else:
-		$Sprite2D.flip_h=true
-		curDirection = -1
+	
+	if canMove:
+		# Handle jump.
+		if Input.is_action_just_pressed("p2_jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			
+		# not sure what this is for -CH
+		shoot()
+		# Get the input direction and handle the movement/deceleration.
+		var direction := Input.get_axis("p2_left", "p2_right")
+		if direction:
+			_animation_player.play("walk")
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			
+		if player_1.position.x > self.position.x:
+			$Sprite2D.flip_h=false
+			curDirection = 1
+		else:
+			$Sprite2D.flip_h=true
+			curDirection = -1
 
 	move_and_slide()
 	
@@ -84,6 +87,7 @@ func shoot():
 		projectile_temp.position = position
 		
 		projectile_temp.damageGroup = "Player_1"
+		AudioController.play_throw_p2()
 		
 func OnHit(damage: int):
 	currentHealth -= damage
@@ -92,3 +96,4 @@ func OnHit(damage: int):
 func validateHealth():
 	if(currentHealth < 0):
 		currentHealth = 0
+		canMove = false

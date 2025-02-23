@@ -10,7 +10,7 @@ signal healthChanged
 @onready var projectile = preload("res://Scenes/projectile.tscn")
 
 const SPEED = 150.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 const MAX_HEALTH = 100
 
 # set up variables
@@ -19,42 +19,49 @@ var player_2
 var currentHealth
 var isHurt
 var curDirection
+var canMove : bool
 
 # ready runs when this node first starts
 func _ready() -> void:
 	var root_node = get_parent()
 	player_2 = root_node.get_node("Player2")
 	currentHealth = MAX_HEALTH
-	
-		
-	
+	canMove = true
+
+func _process(delta: float) -> void:
+	if velocity == Vector2.ZERO:
+		_animation_player.play("idle")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("p1_jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	
+	if canMove:
+		#if velocity == Vector2.ZERO:
+			#_animation_player.play("idle")
 		
-	# not sure what this is for -CH
-	shoot()
-	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("p1_left", "p1_right")
-	if direction:
-		_animation_player.play("walk")
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		_animation_player.stop()
-		
-	if player_2.position.x > self.position.x:
-		$Sprite2D.flip_h=false
-		curDirection = 1 # set current Direction to RIGHT (1; positive)
-	else:
-		$Sprite2D.flip_h=true
-		curDirection = -1 # set current Direction to LEFT (-1; negative)
+		# Handle jump.
+		if Input.is_action_just_pressed("p1_jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			
+		# not sure what this is for -CH
+		shoot()
+		# Get the input direction and handle the movement/deceleration.
+		var direction := Input.get_axis("p1_left", "p1_right")
+		if direction:
+			_animation_player.play("walk")
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			_animation_player.play("idle")
+			
+		if player_2.position.x > self.position.x:
+			$Sprite2D.flip_h=false
+			curDirection = 1 # set current Direction to RIGHT (1; positive)
+		else:
+			$Sprite2D.flip_h=true
+			curDirection = -1 # set current Direction to LEFT (-1; negative)
 
 	move_and_slide()
 	
@@ -76,18 +83,21 @@ func shoot():
 		projectile_temp.global_position = position
 		owner.add_child(projectile_temp)
 		projectile_temp.direction = curDirection
-		projectile_temp._animation_player.play("shoot")
+		#projectile_temp._animation_player.play("shoot")
 	
 	# Set the projectile's starting position
 		projectile_temp.position = position
 		
 		projectile_temp.damageGroup = "Player_2"
+		AudioController.play_throw()
 		
 func OnHit(damage: int):
 	currentHealth -= damage
 	validateHealth()
+	AudioController.play_grunt()
 	#healthChanged.emit(currentHealth)
 	
 func validateHealth():
 	if(currentHealth < 0):
 		currentHealth = 0
+		canMove = false

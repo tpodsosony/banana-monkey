@@ -70,7 +70,7 @@ grow_horizontal = 1
 grow_vertical = 1
 player_1 = NodePath("../Player1")
 
-[node name="P1HealthBar2" type="TextureProgressBar" parent="." node_paths=PackedStringArray("player_2")]
+[node name="P2HealthBar" type="TextureProgressBar" parent="." node_paths=PackedStringArray("player_2")]
 offset_left = 973.0
 offset_top = 156.0
 offset_right = 1127.0
