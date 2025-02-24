@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://xgbxqgjmomph"]
+
+[ext_resource type="Theme" uid="uid://elninl8mwhlo" path="res://Themes/Banana Theme.tres" id="1_4tqqj"]
+[ext_resource type="Script" path="res://Scripts/win_lose.gd" id="2_uc758"]
+[ext_resource type="Texture2D" uid="uid://6ymwiyaxn1rh" path="res://AssetsFinal/Bkgd/DesertBkgd2.jpg" id="3_y7ar8"]
+[ext_resource type="StyleBox" uid="uid://wuawt08d8tpn" path="res://Themes/ButtonStyle.tres" id="4_nl3pf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u70hp"]
+texture = ExtResource("3_y7ar8")
+modulate_color = Color(0.344076, 0.344076, 0.344076, 1)
+
+[node name="WinP2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4tqqj")
+script = ExtResource("2_uc758")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_u70hp")
+
+[node name="P2Win" type="Label" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.17284
+anchor_right = 1.0
+anchor_bottom = 0.402778
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.780392, 0.105882, 1)
+theme_override_constants/line_spacing = 25
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+text = "P1 Lose   P2 Win"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.482
+anchor_top = 0.579
+anchor_right = 0.482
+anchor_bottom = 0.579
+offset_left = -152.264
+offset_top = -51.192
+offset_right = 151.736
+offset_bottom = 50.808
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="PlayAgainButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("4_nl3pf")
+text = "Play Again"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("4_nl3pf")
+text = "Exit
+"
+
+[connection signal="pressed" from="VBoxContainer/PlayAgainButton" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]

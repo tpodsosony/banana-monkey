@@ -16,8 +16,6 @@ const MAX_HEALTH = 100
 # set up variables
 var player_2
 var player_1
-var p1_win
-var end_menu
 var currentHealth
 var isHurt
 var curDirection
@@ -27,7 +25,6 @@ var canMove : bool
 func _ready() -> void:
 	var root_node = get_parent()
 	player_1 = root_node.get_node("Player1")
-	p1_win = root_node.get_node("WinLose/P1Win")
 	currentHealth = MAX_HEALTH
 	canMove = true
 	
@@ -100,5 +97,4 @@ func validateHealth():
 	if(currentHealth < 0):
 		currentHealth = 0
 		canMove = false
-		p1_win.visible = true
-		#$VBoxContainer.visible = true
+		get_tree().change_scene_to_file("res://Scenes/WinP1.tscn")

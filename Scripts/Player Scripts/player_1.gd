@@ -101,5 +101,4 @@ func validateHealth():
 	if(currentHealth < 0):
 		currentHealth = 0
 		canMove = false
-		$P2Win.visible = true
-		$VBoxContainer.visible = true
+		get_tree().change_scene_to_file("res://Scenes/WinP2.tscn")
