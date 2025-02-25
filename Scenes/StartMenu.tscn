@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://elninl8mwhlo" path="res://Themes/Banana Theme.tres" id="1_jamgu"]
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="2_30k87"]
-[ext_resource type="Texture2D" uid="uid://6ymwiyaxn1rh" path="res://AssetsFinal/Bkgd/DesertBkgd2.jpg" id="2_dqs4v"]
+[ext_resource type="Texture2D" uid="uid://6ymwiyaxn1rh" path="res://Assets/Bkgd/DesertBkgd2.jpg" id="2_dqs4v"]
 [ext_resource type="PackedScene" uid="uid://buc1gexqvg6nl" path="res://Scenes/StartMenuMusic.tscn" id="3_ns4c7"]
 [ext_resource type="StyleBox" uid="uid://wuawt08d8tpn" path="res://Themes/ButtonStyle.tres" id="3_pt24i"]
-[ext_resource type="Texture2D" uid="uid://drxr587jqyx3c" path="res://AssetsFinal/Sprites/Other/keyboard_colours.png" id="6_1y3qq"]
+[ext_resource type="Texture2D" uid="uid://drxr587jqyx3c" path="res://Assets/Sprites/Other/keyboard_colours.png" id="6_1y3qq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_clct7"]
 texture = ExtResource("2_dqs4v")

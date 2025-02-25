@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0qx1tvjiusk5"
+path="res://.godot/imported/Monkey Street Fighter Splat 4 - 2.wav-6ea6f3f9cc65531b5e22b5c5b24f7f81.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Sfx/Bannana Sounds/Monkey Street Fighter Splat 4 - 2.wav"
+dest_files=["res://.godot/imported/Monkey Street Fighter Splat 4 - 2.wav-6ea6f3f9cc65531b5e22b5c5b24f7f81.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

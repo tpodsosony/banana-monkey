@@ -1,5 +1,9 @@
 extends Control
 
+func _input(event):
+	# For ESC escape button to quit the game. Need in each major scene!
+	if event.is_action_pressed("exit"):
+		get_tree().quit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

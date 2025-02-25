@@ -1,22 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbwh5fhq187ss"]
+[gd_scene load_steps=14 format=3 uid="uid://cbwh5fhq187ss"]
 
-[ext_resource type="Texture2D" uid="uid://d1uqddunqoy03" path="res://AssetsFinal/Sprites/Other/icon.svg" id="1_p0nmk"]
+[ext_resource type="Script" path="res://Scripts/fighting_scene.gd" id="1_5g02w"]
+[ext_resource type="Texture2D" uid="uid://d1uqddunqoy03" path="res://Assets/Sprites/Other/icon.svg" id="1_p0nmk"]
 [ext_resource type="PackedScene" uid="uid://naslf5cp7p85" path="res://Scenes/FightingMusic.tscn" id="1_x4vh3"]
 [ext_resource type="PackedScene" uid="uid://cos8mfhp6767p" path="res://Scenes/invisible_walls.tscn" id="2_eswe6"]
-[ext_resource type="Texture2D" uid="uid://6ymwiyaxn1rh" path="res://AssetsFinal/Bkgd/DesertBkgd2.jpg" id="4_y1d5m"]
+[ext_resource type="Texture2D" uid="uid://6ymwiyaxn1rh" path="res://Assets/Bkgd/DesertBkgd2.jpg" id="4_y1d5m"]
 [ext_resource type="PackedScene" uid="uid://h1mobvebemti" path="res://Scenes/Player1.tscn" id="5_sj1l2"]
 [ext_resource type="PackedScene" uid="uid://dwboansyciqoe" path="res://Scenes/Player2.tscn" id="7_0dc4i"]
 [ext_resource type="PackedScene" uid="uid://cft7noqopwjfu" path="res://Scenes/HealthBarP1.tscn" id="7_20blb"]
 [ext_resource type="Script" path="res://Scripts/Player Scripts/player_2.gd" id="8_l15p3"]
-[ext_resource type="Texture2D" uid="uid://x6hisx0yph6g" path="res://AssetsFinal/Sprites/HealthBar/health_bar_back.png" id="9_b1eij"]
+[ext_resource type="Texture2D" uid="uid://x6hisx0yph6g" path="res://Assets/Sprites/HealthBar/health_bar_back.png" id="9_b1eij"]
 [ext_resource type="Script" path="res://Scripts/HealthBarP2.gd" id="9_uyraa"]
-[ext_resource type="Texture2D" uid="uid://fsfclf1fq4lh" path="res://AssetsFinal/Sprites/HealthBar/health_bar_front.png" id="10_al81u"]
+[ext_resource type="Texture2D" uid="uid://fsfclf1fq4lh" path="res://Assets/Sprites/HealthBar/health_bar_front.png" id="10_al81u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c16yb"]
 size = Vector2(1153.75, 84)
 
 [node name="FightingScene" type="Node2D"]
 position = Vector2(-72, -60)
+script = ExtResource("1_5g02w")
 
 [node name="FightingMusic" parent="." instance=ExtResource("1_x4vh3")]
 

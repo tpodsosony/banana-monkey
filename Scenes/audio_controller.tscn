@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdnygx4vk0g62"]
 
-[ext_resource type="AudioStream" uid="uid://vcr1pvja4h1q" path="res://AssetsFinal/Audio/Sfx/Angery Monkey 3.wav" id="1_7s00y"]
+[ext_resource type="AudioStream" uid="uid://vcr1pvja4h1q" path="res://Assets/Audio/Sfx/Angery Monkey 3.wav" id="1_7s00y"]
 [ext_resource type="Script" path="res://Scripts/audio_controller.gd" id="1_wo1uu"]
-[ext_resource type="AudioStream" uid="uid://hsd8tpf6bfe6" path="res://AssetsFinal/Audio/Sfx/Bannana Sounds/Monkey Street Fighter Splat 2 - 4.wav" id="2_ysulb"]
-[ext_resource type="AudioStream" uid="uid://d3nkaowctmkel" path="res://AssetsFinal/Audio/Sfx/Monkey Sounds/Monkey Grunt 1.wav" id="3_q7t4m"]
-[ext_resource type="AudioStream" uid="uid://cxdfnglppewnl" path="res://AssetsFinal/Audio/Sfx/Monkey Sounds/Monkey Ooo  4.wav" id="5_vashk"]
+[ext_resource type="AudioStream" uid="uid://hsd8tpf6bfe6" path="res://Assets/Audio/Sfx/Bannana Sounds/Monkey Street Fighter Splat 2 - 4.wav" id="2_ysulb"]
+[ext_resource type="AudioStream" uid="uid://d3nkaowctmkel" path="res://Assets/Audio/Sfx/Monkey Sounds/Monkey Grunt 1.wav" id="3_q7t4m"]
+[ext_resource type="AudioStream" uid="uid://cxdfnglppewnl" path="res://Assets/Audio/Sfx/Monkey Sounds/Monkey Ooo  4.wav" id="5_vashk"]
 
 [node name="AudioController" type="Node2D"]
 script = ExtResource("1_wo1uu")

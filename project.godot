@@ -13,7 +13,7 @@ config_version=5
 config/name="Banana Monkeys"
 run/main_scene="res://Scenes/StartMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://AssetsFinal/Sprites/Other/icon.svg"
+config/icon="res://Assets/Sprites/Other/icon.svg"
 
 [autoload]
 

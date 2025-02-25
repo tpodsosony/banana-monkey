@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bs4ul1dnit7rr"]
 
 [ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_kmfqc"]
-[ext_resource type="Texture2D" uid="uid://iqodwbfobhn1" path="res://AssetsFinal/Sprites/BananaSpriteSheet_1x8.png" id="2_8p815"]
+[ext_resource type="Texture2D" uid="uid://iqodwbfobhn1" path="res://Assets/Sprites/BananaSpriteSheet_1x8.png" id="2_8p815"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8w4n"]
 size = Vector2(46.0161, 71.1011)

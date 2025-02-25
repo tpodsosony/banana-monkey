@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cswyxrpthip2g"]
 
 [ext_resource type="Script" path="res://Scripts/Player Scripts/player_2.gd" id="1_1t7fv"]
-[ext_resource type="Texture2D" uid="uid://cn4awf7d3uetp" path="res://AssetsFinal/Sprites/Other/roguelikeChar_transparent.png" id="2_vb4ti"]
+[ext_resource type="Texture2D" uid="uid://cn4awf7d3uetp" path="res://Assets/Sprites/Other/roguelikeChar_transparent.png" id="2_vb4ti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rheki"]
 size = Vector2(23.5, 20)

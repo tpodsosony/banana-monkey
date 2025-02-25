@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://elninl8mwhlo" path="res://Themes/Banana Theme.tres" id="1_4w5ny"]
 [ext_resource type="Script" path="res://Scripts/win_lose.gd" id="2_11fek"]
-[ext_resource type="Texture2D" uid="uid://6ymwiyaxn1rh" path="res://AssetsFinal/Bkgd/DesertBkgd2.jpg" id="3_j2uqr"]
+[ext_resource type="Texture2D" uid="uid://6ymwiyaxn1rh" path="res://Assets/Bkgd/DesertBkgd2.jpg" id="3_j2uqr"]
 [ext_resource type="StyleBox" uid="uid://wuawt08d8tpn" path="res://Themes/ButtonStyle.tres" id="5_2xh6e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u70hp"]
